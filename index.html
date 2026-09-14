@@ -45,7 +45,36 @@
             let preview = document.getElementById('previewWindow');
             preview.srcdoc = code;
         }
-    </script>
+      <script>
+    function checkAccess() {
+        const currentHour = new Date().getHours(); // ساعت فعلی رو می‌گیره (0 تا 23)
+
+        // فرض کنیم از ساعت 12 ظهر تا 12 شب رایگان باشه (12 تا 23)
+        if (currentHour >= 12 && currentHour < 24) {
+            document.getElementById("game-area").style.display = "block";
+            document.getElementById("lock-message").style.display = "none";
+        } else {
+            document.getElementById("game-area").style.display = "none";
+            document.getElementById("lock-message").style.display = "block";
+        }
+    }
+    window.onload = checkAccess;
+</script>
+
+<!-- این بخش بازیه -->
+<div id="game-area">
+    <p>بازی شما اینجاست! (بخش رایگان)</p>
+</div>
+
+<!-- این بخش قفل -->
+<div id="lock-message" style="display:none;">
+    <p>متاسفانه الان در ساعت غیررایگان هستیم. برای بازی در این ساعت، باید اشتراک بخرید!</p>
+</div>
+<a href="https://t.me/your_id" class="buy-button">
+    برای دریافت نسخه کامل بازی پیام دهید
+</a>
+
+</script>
 
 </body>
 </html>
