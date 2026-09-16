@@ -2,224 +2,60 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>BSTZ Studio | استودیو بازی‌سازی من</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstz Studio | مسابقات حرفه‌ای</title>
     <style>
-        body { font-family: Tahoma, Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
-        .header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; border-radius: 10px; }
-        .header h1 { margin: 0; }
-        .header p { margin: 5px 0 0 0; color: #3498db; font-weight: bold; }
-        .container { max-width: 700px; margin: 20px auto; }
-        .card { background-color: white; padding: 15px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #00ff41; /* رنگ نئون سبز */
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 { color: #00ff41; margin-bottom: 10px; }
+        p { color: #ccc; line-height: 1.6; }
+        .price { font-size: 24px; font-weight: bold; color: #fff; margin: 20px 0; }
         
-        textarea { width: 100%; height: 150px; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: monospace; }
-        button { background-color: #27ae60; color: white; border: none; padding: 10px 20px; margin-top: 10px; cursor: pointer; border-radius: 5px; width: 100%; }
-        iframe { width: 100%; height: 200px; border: 2px solid #3498db; margin-top: 10px; border-radius: 5px; background: white; }
+        .btn {
+            background: transparent;
+            border: 2px solid #00ff41;
+            color: #00ff41;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 20px #00ff41;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>به استودیوی بازی‌سازی BSTZ خوش آمدید</h1>
-        <p>bstz-studio.ir</p>
-    </div>
-
     <div class="container">
-        <!-- بخش پروژه و ویرایشگر -->
-        <div class="card">
-            <h2>پروژه من (ویرایشگر زنده)</h2>
-            <p>کد HTML خود را اینجا بنویس و دکمه اجرا را بزن:</p>
-            <textarea id="myCode" placeholder="<h1>سلام! این پروژه جدید من است</h1>"></textarea>
-            <button onclick="runCode()">اجرای کد</button>
-            <iframe id="previewWindow"></iframe>
-        </div>
-
-        <div class="card">
-            <h2>درباره من</h2>
-            <p>برنامه‌نویس و عاشق بازی‌سازی در محیط اندروید. اینجا محل ثبت پروژه‌های من است.</p>
-        </div>
+        <h1>Bstz Studio</h1>
+        <p>به لیگ حرفه‌ای ما خوش آمدید! رقابت داغ ۸ نفره با جوایز ویژه.</p>
+        <div class="price">ورودی: ۱۵۰,۰۰۰ تومان</div>
+        <p>برای ثبت‌نام و دریافت تاییدیه، رسید پرداخت را به آیدی زیر در <b>روبیکا</b> ارسال کنید:</p>
+        <a href="https://rubika.ir/tavanaee56" class="btn">ارسال رسید به روبیکا</a>
     </div>
-
-    <script>
-        function runCode() {
-            let code = document.getElementById('myCode').value;
-            let preview = document.getElementById('previewWindow');
-            preview.srcdoc = code;
-        }
-      <script>
-    function checkAccess() {
-        const currentHour = new Date().getHours(); // ساعت فعلی رو می‌گیره (0 تا 23)
-
-        // فرض کنیم از ساعت 12 ظهر تا 12 شب رایگان باشه (12 تا 23)
-        if (currentHour >= 12 && currentHour < 24) {
-            document.getElementById("game-area").style.display = "block";
-            document.getElementById("lock-message").style.display = "none";
-        } else {
-            document.getElementById("game-area").style.display = "none";
-            document.getElementById("lock-message").style.display = "block";
-        }
-    }
-    window.onload = checkAccess;
-</script>
-
-<!-- این بخش بازیه -->
-<div id="game-area">
-    <p>بازی شما اینجاست! (بخش رایگان)</p>
-</div>
-
-<!-- این بخش قفل -->
-<div id="lock-message" style="display:none;">
-    <p>متاسفانه الان در ساعت غیررایگان هستیم. برای بازی در این ساعت، باید اشتراک بخرید!</p>
-</div>
-<a href="https://t.me/your_id" class="buy-button">
-    برای دریافت نسخه کامل بازی پیام دهید
-</a>
-<!-- دکمه خرید یا ارتباط با ما -->
-<a href="https://rubika.ir/bstz_studio" target="_blank" style="
-    display: inline-block;
-    background-color: #8e44ad; 
-    color: white; 
-    padding: 15px 25px; 
-    text-decoration: none; 
-    border-radius: 10px; 
-    font-weight: bold;
-    font-family: Tahoma, sans-serif;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-">
-    💬 برای خرید بازی در روبیکا کلیک کنید
-</a>
-<!-- بخش مسابقات -->
-<div class="card" style="border: 2px solid #e67e22; background-color: #fffaf0;">
-    <h2 style="color: #d35400;">🏆 مسابقات آنلاین BSTZ (8 نفر برتر)</h2>
-    <p>در رقابت‌های تک‌به‌تک ما شرکت کن و قهرمان شو!</p>
-    <ul style="text-align: right;">
-        <li>ظرفیت: 8 نفر</li>
-        <li>نوع بازی: تک‌به‌تک (1v1)</li>
-        <li>ورودی: 150,000 تومان</li>
-    </ul>
-    <a href="https://rubika.ir/bstz_studio" style="
-        display: block;
-        background-color: #e67e22; 
-        color: white; 
-        padding: 15px; 
-        text-align: center; 
-        text-decoration: none; 
-        border-radius: 5px; 
-        font-weight: bold;">
-        ثبت‌نام و پرداخت ورودیه (روبیکا)
-    </a>
-</div>
-<!-- بخش مسابقات با آیدی جدید -->
-<div class="card" style="border: 2px solid #e67e22; background-color: #fffaf0; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-    <h2 style="color: #d35400;">🏆 مسابقات آنلاین BSTZ (8 نفر برتر)</h2>
-    <p>در رقابت‌های تک‌به‌تک ما شرکت کن و قهرمان شو!</p>
-    <ul style="text-align: right;">
-        <li>ظرفیت: 8 نفر</li>
-        <li>نوع بازی: تک‌به‌تک (1v1)</li>
-        <li>ورودی: 150,000 تومان</li>
-    </ul>
-    <a href="https://rubika.ir/tavanaee56" style="
-        display: block;
-        background-color: #e67e22; 
-        color: white; 
-        padding: 15px; 
-        text-align: center; 
-        text-decoration: none; 
-        border-radius: 5px; 
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        ثبت‌نام و ارسال رسید (روبیکا)
-    </a>
-</div>
-<!-- بخش مسابقات با آیدی جدید پیو -->
-<div class="card" style="border: 2px solid #e67e22; background-color: #fffaf0; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-    <h2 style="color: #d35400;">🏆 مسابقات آنلاین BSTZ (8 نفر برتر)</h2>
-    <p>در رقابت‌های تک‌به‌تک ما شرکت کن و قهرمان شو!</p>
-    <ul style="text-align: right; list-style-position: inside;">
-        <li>ظرفیت: 8 نفر</li>
-        <li>نوع بازی: تک‌به‌تک (1v1)</li>
-        <li>ورودی: 150,000 تومان</li>
-    </ul>
-    <a href="https://peyv.ir/tavanaee56" style="
-        display: block;
-        background-color: #e67e22; 
-        color: white; 
-        padding: 15px; 
-        text-align: center; 
-        text-decoration: none; 
-        border-radius: 5px; 
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        ثبت‌نام و ارسال رسید (پیام‌رسان پیو)
-    </a>
-</div>
-<!-- بخش مسابقات با لینک مستقیم به پی‌وی روبیکا -->
-<div class="card" style="border: 2px solid #e67e22; background-color: #fffaf0; padding: 20px; border-radius: 10px; margin-bottom: 20px; font-family: Tahoma, sans-serif;">
-    <h2 style="color: #d35400; text-align: center;">🏆 مسابقات آنلاین BSTZ (8 نفر برتر)</h2>
-    <p style="text-align: center;">در رقابت‌های تک‌به‌تک ما شرکت کن و قهرمان شو!</p>
-    <ul style="text-align: right; list-style-type: none; padding-right: 0;">
-        <li>✅ <b>ظرفیت:</b> 8 نفر</li>
-        <li>⚔️ <b>نوع بازی:</b> تک‌به‌تک (1v1)</li>
-        <li>💰 <b>ورودی:</b> 150,000 تومان</li>
-    </ul>
-    <a href="https://rubika.ir/tavanaee56" style="
-        display: block;
-        background-color: #e67e22; 
-        color: white; 
-        padding: 15px; 
-        text-align: center; 
-        text-decoration: none; 
-        border-radius: 5px; 
-        font-weight: bold;
-        font-size: 18px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        📩 ارسال رسید و ثبت‌نام (کلیک کنید)
-    </a>
-</div>
-<!-- دکمه هدایت به پی‌وی روبیکا برای ثبت‌نام -->
-<a href="https://rubika.ir/tavanaee56" style="
-    display: inline-block;
-    background-color: #27ae60; 
-    color: white; 
-    padding: 15px 30px; 
-    text-align: center; 
-    text-decoration: none; 
-    border-radius: 8px; 
-    font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-    📩 ارسال رسید و ثبت‌نام در روبیکا
-</a>
-<!-- بخش مسابقات با راهنمای دقیق برای کاربر -->
-<div class="card" style="border: 2px solid #e67e22; background-color: #fffaf0; padding: 20px; border-radius: 10px; margin-bottom: 20px; font-family: Tahoma, sans-serif; direction: rtl;">
-    <h2 style="color: #d35400; text-align: center;">🏆 مسابقات آنلاین BSTZ</h2>
-    <p style="text-align: center;">برای شرکت در مسابقه، روی دکمه زیر بزن و در روبیکا به من پیام بده.</p>
-    
-    <ul style="list-style-type: none; padding: 0;">
-        <li style="margin-bottom: 10px;">✅ <b>ظرفیت:</b> 8 نفر</li>
-        <li style="margin-bottom: 10px;">💰 <b>ورودی:</b> 150,000 تومان</li>
-    </ul>
-
-    <!-- دکمه با راهنمای مستقیم -->
-    <a href="https://rubika.ir/tavanaee56" style="
-        display: block;
-        background-color: #e67e22; 
-        color: white; 
-        padding: 15px; 
-        text-align: center; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        font-weight: bold;
-        font-size: 18px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        📩 کلیک کن و در روبیکا پیام بده
-    </a>
-    
-    <p style="font-size: 12px; color: #7f8c8d; text-align: center; margin-top: 10px;">
-        (بعد از کلیک، در صفحه پروفایل من، روی آیکون پیام بزن)
-    </p>
-</div>
-
-</script>
 
 </body>
 </html>
